@@ -4,8 +4,7 @@ struct Uniforms {
     modelMatrix : mat4x4<f32>;               
     normalMatrix : mat4x4<f32>;            
 };
-@binding(0) @group(0) 
-var<uniform> uniforms : Uniforms;
+@binding(0) @group(0) var<uniform> uniforms : Uniforms;
 
 struct Input {
     @location(0) position : vec4<f32>;
@@ -38,8 +37,7 @@ struct FragUniforms {
     lightPosition : vec4<f32>;   
     eyePosition : vec4<f32>;
 };
-@binding(1) @group(0) 
-var<uniform> fragUniforms : FragUniforms;
+@binding(1) @group(0) var<uniform> fragUniforms : FragUniforms;
 
 struct LightUniforms {
     ambientIntensity: f32;
@@ -52,12 +50,9 @@ struct LightUniforms {
     isPhong: f32;
     isTwoSideLighting: f32;
 };
-@binding(2) @group(0) 
-var<uniform> lightUniforms : LightUniforms;
-@binding(3) @group(0) 
-var textureSampler : sampler;
-@binding(4) @group(0) 
-var textureData : texture_2d<f32>;
+@binding(2) @group(0) var<uniform> lightUniforms : LightUniforms;
+@binding(3) @group(0) var textureSampler : sampler;
+@binding(4) @group(0) var textureData : texture_2d<f32>;
 
 struct FragInput {
     @location(0) vPosition : vec4<f32>;
